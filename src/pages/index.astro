@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { UserInfo } from '../components/UserInfo.tsx';
 ---
 
 <Layout title='Multi-Step Form'>
-  <main></main>
+  <main>
+    <UserInfo client:only='react' />
+  </main>
 </Layout>
