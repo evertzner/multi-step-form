@@ -11,3 +11,5 @@ export const user = map<Record<string, string | null>>({
   email: null,
   phone: null
 });
+
+export const monthlyPlan = atom(true);
