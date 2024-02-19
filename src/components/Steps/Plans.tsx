@@ -1,5 +1,31 @@
 import { useStore } from '@nanostores/react';
-import { monthlyPlan } from '../../store';
+import { monthlyPlan, plans, selectedPlan, type IPlanInfo, type PlanName } from '../../store';
+
+type PlanProps = {
+  planName: PlanName;
+  planInfo: IPlanInfo;
+};
+
+const Plan = ({ planName, planInfo }: PlanProps) => {
+  const $monthlyPlan = useStore(monthlyPlan);
+  const $selectedPlan = useStore(selectedPlan);
+  const { monthly, yearly } = planInfo;
+
+  const selectPlan = () => {
+    selectedPlan.set(planName);
+  };
+
+  return (
+    <div
+      className={`${planName === $selectedPlan ? 'bg-red-200' : 'bg-transparent'}`}
+      onClick={selectPlan}
+    >
+      <div>{planName}</div>
+      <div>{$monthlyPlan ? monthly : yearly}</div>
+      {!$monthlyPlan && <span>2 months free</span>}
+    </div>
+  );
+};
 
 type DurationProps = {
   text: string;
@@ -18,16 +44,18 @@ export const Plans = () => {
   const $monthlyPlan = useStore(monthlyPlan);
 
   return (
-    <div>
-      <div>Arcade</div>
-      <div>Advanced</div>
-      <div>Pro</div>
+    <div className='flex flex-col'>
+      <div>
+        <Plan planName={'Arcade'} planInfo={plans.Arcade} />
+        <Plan planName={'Advanced'} planInfo={plans.Advanced} />
+        <Plan planName={'Pro'} planInfo={plans.Pro} />
+      </div>
       <div>
         <label className='inline-flex items-center mb-5 cursor-pointer gap-3'>
           <Duration text='Monthly' monthly={$monthlyPlan} />
           <input
             type='checkbox'
-            value=''
+            checked={!monthlyPlan.get()}
             id='animate'
             className='sr-only peer'
             onChange={() => {

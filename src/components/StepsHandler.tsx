@@ -1,5 +1,5 @@
 import { useStore } from '@nanostores/react';
-import { currentStep, totalSteps, user, formValid } from '../store';
+import { currentStep, formValid, totalSteps, user, type IUser } from '../store';
 
 export const StepsHandler = () => {
   const $user = useStore(user);
@@ -8,7 +8,7 @@ export const StepsHandler = () => {
 
   const next = () => {
     Object.entries($user).forEach(([name, value]) => {
-      if (value === null) user.setKey(name, '');
+      if (value === null) user.setKey(name as keyof IUser, '');
     });
 
     if (!$formValid) return;
@@ -27,7 +27,6 @@ export const StepsHandler = () => {
 
   return (
     <>
-      <div>{$currentStep}</div>
       {$currentStep > 1 && <button onClick={previous}>Go Back</button>}
       <button onClick={$currentStep < totalSteps - 1 ? next : confirm}>
         {$currentStep < totalSteps - 1 ? 'Next Step' : 'Confirm'}

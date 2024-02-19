@@ -1,5 +1,5 @@
 import { useStore } from '@nanostores/react';
-import { formValid, user } from '../../store';
+import { formValid, user, type IUser } from '../../store';
 
 export const PersonalInformation = () => {
   const $user = useStore(user);
@@ -7,7 +7,7 @@ export const PersonalInformation = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    user.setKey(name, value);
+    user.setKey(name as keyof IUser, value);
 
     const isValid = !Object.values(user.get()).some((val) => val === null || val === '');
     formValid.set(isValid);
