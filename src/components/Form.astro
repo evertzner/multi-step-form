@@ -4,6 +4,10 @@ import { SideBar } from './SideBar';
 import { Content } from './Content';
 ---
 
-<SideBar client:only='react' />
-<Content client:only='react' />
-<StepsHandler client:only='react' />
+<div class="bg-white flex p-4">
+  <SideBar client:only='react' />
+  <div>
+    <Content client:only='react' />
+    <StepsHandler client:only='react' />
+  </div>
+</div>
