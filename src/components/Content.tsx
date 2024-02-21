@@ -28,10 +28,13 @@ export const Content = () => {
   }
 
   const headers: IHeaders = {
-    1: { title: '1', subtitle: '1Sub' },
-    2: { title: '2', subtitle: '2Sub' },
-    3: { title: '3', subtitle: '3Sub' },
-    4: { title: '4', subtitle: '4Sub' },
+    1: {
+      title: 'Personal info',
+      subtitle: 'Please provide your name, email address and phone number.'
+    },
+    2: { title: 'Select your plan', subtitle: 'You have the option of monthly or yearly billing.' },
+    3: { title: 'Pick add-ons', subtitle: 'Add-ons help enhance your gaming experience.' },
+    4: { title: 'Finishing up', subtitle: 'Double-check everything looks OK before confirming.' },
     5: { title: '5', subtitle: '5Sub' }
   };
 

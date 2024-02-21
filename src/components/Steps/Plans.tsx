@@ -21,7 +21,7 @@ const Plan = ({ planName, planInfo }: PlanProps) => {
       onClick={selectPlan}
     >
       <div>{planName}</div>
-      <div>{$monthlyPlan ? monthly : yearly}</div>
+      <div>${$monthlyPlan ? monthly + '/mo' : yearly + '/yr'}</div>
       {!$monthlyPlan && <span>2 months free</span>}
     </div>
   );
