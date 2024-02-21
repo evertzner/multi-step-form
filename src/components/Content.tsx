@@ -38,7 +38,7 @@ export const Content = () => {
   const { title, subtitle } = headers[$currentStep];
 
   return (
-    <>
+    <div className=''>
       {$currentStep !== totalSteps && <Header title={title} subtitle={subtitle} />}
       <div>
         {$currentStep === 1 && <PersonalInformation />}
@@ -47,6 +47,6 @@ export const Content = () => {
         {$currentStep === 4 && <Summary />}
         {$currentStep === 5 && <ThankYou />}
       </div>
-    </>
+    </div>
   );
 };

@@ -26,11 +26,11 @@ export const StepsHandler = () => {
   if ($currentStep === totalSteps) return;
 
   return (
-    <>
+    <div className={`flex ${$currentStep == 1 ? 'justify-end' : 'justify-between'}`}>
       {$currentStep > 1 && <button onClick={previous}>Go Back</button>}
       <button onClick={$currentStep < totalSteps - 1 ? next : confirm}>
         {$currentStep < totalSteps - 1 ? 'Next Step' : 'Confirm'}
       </button>
-    </>
+    </div>
   );
 };

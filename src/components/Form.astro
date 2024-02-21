@@ -4,9 +4,9 @@ import { SideBar } from './SideBar';
 import { Content } from './Content';
 ---
 
-<div class="bg-white flex p-4">
+<div class="bg-white flex p-4 w-full rounded-xl">
   <SideBar client:only='react' />
-  <div>
+  <div class="py-7 px-20 w-[800px] flex flex-col justify-between">
     <Content client:only='react' />
     <StepsHandler client:only='react' />
   </div>
