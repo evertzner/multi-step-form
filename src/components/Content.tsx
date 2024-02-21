@@ -13,9 +13,9 @@ type HeaderProps = {
 
 const Header = ({ title, subtitle }: HeaderProps) => {
   return (
-    <div>
-      <div>{title}</div>
-      <div>{subtitle}</div>
+    <div className='flex flex-col gap-2'>
+      <div className='font-bold text-3xl text-blue-4'>{title}</div>
+      <div className='text-neutral-4 font-light text-sm tracking-wide'>{subtitle}</div>
     </div>
   );
 };
@@ -41,7 +41,7 @@ export const Content = () => {
   const { title, subtitle } = headers[$currentStep];
 
   return (
-    <div className=''>
+    <div className='flex flex-col gap-8'>
       {$currentStep !== totalSteps && <Header title={title} subtitle={subtitle} />}
       <div>
         {$currentStep === 1 && <PersonalInformation />}
