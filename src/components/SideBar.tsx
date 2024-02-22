@@ -1,5 +1,5 @@
+import { currentStep } from '@/store';
 import { useStore } from '@nanostores/react';
-import { currentStep } from '../store';
 
 export const SideBar = () => {
   const $currentStep = useStore(currentStep);

@@ -1,6 +1,6 @@
+import { formValid, user, type IUser } from '@/store';
 import { useStore } from '@nanostores/react';
 import type { ReactNode } from 'react';
-import { formValid, user, type IUser } from '../../store';
 
 type InputProps = {
   value: string | null;
@@ -18,8 +18,6 @@ const Input = ({ value, type, name, placeholder }: InputProps) => {
     const isValid = !Object.values(user.get()).some((val) => val === null || val === '');
     formValid.set(isValid);
   };
-
-  console.log(value);
 
   return (
     <input
@@ -66,9 +64,6 @@ const InputControl = ({ children }: InputControlProps) => {
 
 export const PersonalInformation = () => {
   const $user = useStore(user);
-
-  console.log($user.name);
-
   return (
     <form className='flex flex-col gap-4'>
       <InputControl>

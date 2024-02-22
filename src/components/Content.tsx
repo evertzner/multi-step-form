@@ -1,5 +1,5 @@
+import { currentStep, totalSteps } from '@/store';
 import { useStore } from '@nanostores/react';
-import { currentStep, totalSteps } from '../store';
 import { AddOns } from './Steps/AddOns';
 import { PersonalInformation } from './Steps/PersonalInformation';
 import { Plans } from './Steps/Plans';

@@ -1,5 +1,5 @@
+import { addOns, currentStep, monthlyPlan, plans, selectedPlan, type IAddOns } from '@/store';
 import { useStore } from '@nanostores/react';
-import { addOns, currentStep, monthlyPlan, plans, selectedPlan, type IAddOns } from '../../store';
 
 type AddOnProps = {
   addOn: IAddOns;

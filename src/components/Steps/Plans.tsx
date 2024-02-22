@@ -1,5 +1,5 @@
+import { monthlyPlan, plans, selectedPlan, type IPlanInfo, type PlanName } from '@/store';
 import { useStore } from '@nanostores/react';
-import { monthlyPlan, plans, selectedPlan, type IPlanInfo, type PlanName } from '../../store';
 
 type PlanProps = {
   planName: PlanName;
