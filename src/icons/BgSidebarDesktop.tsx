@@ -35,9 +35,9 @@ export const BgSidebarDesktop = ({ className }: IconProps) => {
         />
         <path
           stroke='#fff'
-          stroke-linecap='round'
-          stroke-linejoin='bevel'
-          stroke-width='5'
+          strokeLinecap='round'
+          strokeLinejoin='bevel'
+          strokeWidth='5'
           d='m165.305 469.097 10.607-10.806M209.461 474.581l-12.506-10.503M187.56 488.991l-6.908 14.798'
         />
         <path

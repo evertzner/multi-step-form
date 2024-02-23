@@ -30,7 +30,7 @@ const Input = ({ value, type, name, placeholder }: InputProps) => {
       required
       className={`${
         value === '' && 'ring-1 ring-red-1'
-      } ring-1 ring-neutral-3 rounded-md px-3 py-2 text-sm text-blue-4 focus:ring-1 focus:ring-blue-4 focus:outline-none`}
+      } ring-1 ring-neutral-3 rounded-md px-3 py-2 lg:text-sm text-blue-4 focus:ring-1 focus:ring-blue-4 focus:outline-none`}
     />
   );
 };
@@ -40,11 +40,11 @@ type LabelProps = {
 };
 
 const Label = ({ label }: LabelProps) => {
-  return <div className='text-xs font-light text-blue-4'>{label}</div>;
+  return <div className='text-sm lg:text-xs font-medium lg:font-light text-blue-4'>{label}</div>;
 };
 
 const Error = ({ label }: LabelProps) => {
-  return <span className='text-red-1 font-bold text-xs'>{label}</span>;
+  return <span className='text-red-1 font-bold text-sm lg:text-xs'>{label}</span>;
 };
 
 type LabelContainerProps = {

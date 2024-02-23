@@ -30,7 +30,9 @@ export const StepsHandler = () => {
   if ($currentStep === totalSteps) return;
 
   return (
-    <div className={`flex ${$currentStep == 1 ? 'justify-end' : 'justify-between'}`}>
+    <div
+      className={`bg-white lg:bg-transparent p-5 lg:p-0 -mx-5 lg:mx-0 flex ${$currentStep == 1 ? 'justify-end' : 'justify-between'}`}
+    >
       {$currentStep > 1 && (
         <button onClick={previous} className='text-neutral-4 text-sm hover:text-blue-4'>
           Go Back
@@ -38,7 +40,7 @@ export const StepsHandler = () => {
       )}
       <button
         onClick={$currentStep < totalSteps - 1 ? next : confirm}
-        className={` text-white text-sm px-6 py-3 rounded-lg transition-all ${
+        className={`text-white text-sm px-6 py-3 rounded-lg transition-all ${
           $currentStep < totalSteps - 1 ? 'bg-blue-4 hover:bg-blue-3' : 'bg-blue-3 hover:bg-blue-2'
         }`}
       >
