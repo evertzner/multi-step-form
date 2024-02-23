@@ -41,9 +41,9 @@ export const Content = () => {
   const { title, subtitle } = headers[$currentStep];
 
   return (
-    <div className='flex flex-col gap-8'>
+    <div className='flex flex-col gap-8 h-full'>
       {$currentStep !== totalSteps && <Header title={title} subtitle={subtitle} />}
-      <div>
+      <div className='h-full grid'>
         {$currentStep === 1 && <PersonalInformation />}
         {$currentStep === 2 && <Plans />}
         {$currentStep === 3 && <AddOns />}

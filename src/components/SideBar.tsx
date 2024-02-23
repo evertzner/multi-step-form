@@ -1,3 +1,4 @@
+import { BgSidebarDesktop } from '@/icons/BgSidebarDesktop';
 import { currentStep } from '@/store';
 import { useStore } from '@nanostores/react';
 
@@ -24,11 +25,7 @@ export const SideBar = () => {
 
   return (
     <div className='grid grid-cols-1 grid-rows-1'>
-      <img
-        src='/assets/images/bg-sidebar-desktop.svg'
-        alt='Background Sidebar'
-        className='z-0 col-start-1 row-start-1'
-      />
+      <BgSidebarDesktop className='z-0 col-start-1 row-start-1' />
       <div className='z-10 col-start-1 row-start-1 p-8 flex flex-col gap-8'>
         {step(1, 'Your info')}
         {step(2, 'Select plan')}

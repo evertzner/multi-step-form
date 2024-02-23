@@ -1,5 +1,6 @@
 import { useStore } from '@nanostores/react';
 import { currentStep, formValid, totalSteps, user, type IUser } from '../store';
+import { emailValdaiton } from '@/utils/emailValidation';
 
 export const StepsHandler = () => {
   const $user = useStore(user);
@@ -11,6 +12,9 @@ export const StepsHandler = () => {
       if (value === null) user.setKey(name as keyof IUser, '');
     });
 
+    if ($user.email != null && $user.email != '') {
+      if (!emailValdaiton($user.email)) return;
+    }
     if (!$formValid) return;
     if ($currentStep < totalSteps - 1) currentStep.set($currentStep + 1);
   };

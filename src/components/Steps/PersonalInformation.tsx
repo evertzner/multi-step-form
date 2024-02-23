@@ -1,4 +1,5 @@
 import { formValid, user, type IUser } from '@/store';
+import { emailValdaiton } from '@/utils/emailValidation';
 import { useStore } from '@nanostores/react';
 import type { ReactNode } from 'react';
 
@@ -42,8 +43,8 @@ const Label = ({ label }: LabelProps) => {
   return <div className='text-xs font-light text-blue-4'>{label}</div>;
 };
 
-const Required = () => {
-  return <span className='text-red-1 font-bold text-xs'>This field is required</span>;
+const Error = ({ label }: LabelProps) => {
+  return <span className='text-red-1 font-bold text-xs'>{label}</span>;
 };
 
 type LabelContainerProps = {
@@ -69,14 +70,17 @@ export const PersonalInformation = () => {
       <InputControl>
         <LabelContainer>
           <Label label='Name' />
-          {$user.name === '' && <Required />}
+          {$user.name === '' && <Error label='This field is required' />}
         </LabelContainer>
         <Input name='name' type='text' value={$user.name} placeholder='e.g. Stephen King' />
       </InputControl>
       <InputControl>
         <LabelContainer>
           <Label label='Email Address' />
-          {$user.email === '' && <Required />}
+          {$user.email === '' && <Error label='This field is required' />}
+          {$user.email != null && $user.email != '' && !emailValdaiton($user.email) && (
+            <Error label='Wrong email format' />
+          )}
         </LabelContainer>
         <Input
           name='email'
@@ -88,7 +92,7 @@ export const PersonalInformation = () => {
       <InputControl>
         <LabelContainer>
           <Label label='Phone Number' />
-          {$user.phone === '' && <Required />}
+          {$user.phone === '' && <Error label='This field is required' />}
         </LabelContainer>
         <Input name='phone' type='text' value={$user.phone} placeholder='e.g. +123 456 789 0' />
       </InputControl>
