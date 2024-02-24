@@ -25,7 +25,7 @@ export const SideBar = () => {
   };
 
   return (
-    <div className='grid grid-cols-1 grid-rows-1'>
+    <div className='grid grid-cols-1 grid-rows-1 lg:overflow-hidden lg:rounded-lg'>
       <div className='z-0 col-start-1 row-start-1'>
         <BgSidebarMobile className='inline-block lg:hidden' />
         <BgSidebarDesktop className='hidden lg:inline-block' />

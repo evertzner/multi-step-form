@@ -15,7 +15,7 @@ const Header = ({ title, subtitle }: HeaderProps) => {
   return (
     <div className='flex flex-col gap-2'>
       <div className='font-bold text-2xl lg:text-3xl text-blue-4'>{title}</div>
-      <div className='text-neutral-4 font-light text-lg lg:text-sm tracking-wide'>{subtitle}</div>
+      <p className='text-neutral-4 font-light text-lg lg:text-sm tracking-wide'>{subtitle}</p>
     </div>
   );
 };

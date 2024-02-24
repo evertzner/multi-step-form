@@ -9,8 +9,8 @@ type AddOnProps = {
 const AddOn = ({ addOn, monthly }: AddOnProps) => {
   return (
     <div className='flex justify-between'>
-      <div className='text-neutral-4 font-light text-xs'>{addOn.name}</div>
-      <div className='text-blue-4 text-xs'>
+      <div className='text-neutral-4 font-light lg:text-xs'>{addOn.name}</div>
+      <div className='text-blue-4 lg:text-xs'>
         +${monthly ? addOn.monthlyPrice + '/mo' : addOn.yearlyPrice + '/yr'}
       </div>
     </div>
@@ -32,25 +32,25 @@ export const Summary = () => {
 
   return (
     <div className='flex flex-col gap-5'>
-      <div className='bg-neutral-2 rounded-sm px-5 py-5 flex flex-col gap-4'>
+      <div className='bg-neutral-2 rounded-md lg:rounded-sm px-5 py-5 flex flex-col gap-4'>
         <div className='flex justify-between items-center'>
           <div className=''>
-            <div className='text-blue-4 font-medium text-xs'>
+            <div className='text-blue-4 font-medium lg:text-xs'>
               {$selectedPlan} ({$monthlyPlan ? 'Monthly' : 'Yearly'})
             </div>
             <button
-              className='text-neutral-4 text-xs font-light underline hover:text-blue-3'
+              className='text-neutral-4 lg:text-xs font-light underline hover:text-blue-3'
               onClick={changePlan}
             >
               Change
             </button>
           </div>
-          <div className='text-blue-4 font-medium text-xs'>
+          <div className='text-blue-4 font-medium lg:text-xs'>
             ${$monthlyPlan ? monthly + '/mo' : yearly + '/yr'}
           </div>
         </div>
         <hr />
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-4 lg:gap-2'>
           {Object.entries($addOns).map(([key, value]) => {
             if (value.selected) {
               total += $monthlyPlan ? value.monthlyPrice : value.yearlyPrice;
@@ -59,11 +59,11 @@ export const Summary = () => {
           })}
         </div>
       </div>
-      <div className='flex justify-between px-5'>
-        <div className='text-neutral-4 text-xs font-light'>
+      <div className='flex justify-between items-center px-5'>
+        <div className='text-neutral-4 lg:text-xs font-light'>
           Total (per {$monthlyPlan ? 'month' : 'year'})
         </div>
-        <div className='text-blue-3 font-bold'>
+        <div className='text-blue-3 font-bold text-lg lg:text-base'>
           ${total}
           {$monthlyPlan ? '/mo' : '/yr'}
         </div>

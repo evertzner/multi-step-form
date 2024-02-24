@@ -16,7 +16,7 @@ const AddOn = ({ index, addOn }: AddOnProps) => {
 
   return (
     <div
-      className={`rounded-lg cursor-pointer px-5 py-4 flex gap-5 items-center hover:border-blue-3 ${addOn.selected ? 'bg-neutral-2 border border-blue-3' : 'bg-transparent border border-neutral-3'}`}
+      className={`rounded-lg cursor-pointer px-3 lg:px-5 py-3 lg:py-4 flex gap-3 lg:gap-5 items-center hover:border-blue-3 ${addOn.selected ? 'bg-neutral-2 border border-blue-3' : 'bg-transparent border border-neutral-3'}`}
       onClick={selectAddOn}
     >
       <div>
@@ -28,12 +28,12 @@ const AddOn = ({ index, addOn }: AddOnProps) => {
           checked={addOn.selected}
           onChange={() => {}}
         />
-        <div className='grid place-content-center border border-neutral-3 w-4 h-4 rounded-[4px] bg-transparent peer-checked:bg-blue-3 peer-checked:border-none'>
-          <IconCheckmark className='w-[10px]' />
+        <div className='grid place-content-center border border-neutral-3 w-6 h-6 lg:w-4 lg:h-4 rounded-[4px] bg-transparent peer-checked:bg-blue-3 peer-checked:border-none'>
+          <IconCheckmark className='w-4 lg:w-[10px]' />
         </div>
       </div>
       <div>
-        <div className='text-blue-4 text-sm'>{addOn.name}</div>
+        <div className='text-blue-4 font-medium lg:font-normal lg:text-sm'>{addOn.name}</div>
         <div className='text-neutral-4 text-xs font-light'>{addOn.description}</div>
       </div>
       <div className='text-blue-3 text-xs ml-auto'>
